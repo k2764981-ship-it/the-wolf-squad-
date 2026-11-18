@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE WOLF SQUAD</title>
+<style>
+body{margin:0;background:#080808;color:white;font-family:Arial;text-align:center}
+header{padding:80px 15px;background:radial-gradient(circle,#4b080e,#080808)}
+h1{font-size:42px;color:#ff2638}
+h2{color:#ff2638}
+section{padding:35px 15px}
+.card{background:#171717;padding:22px;margin:12px;border:1px solid #68202a;border-radius:12px}
+input,textarea{display:block;width:90%;max-width:450px;margin:12px auto;padding:14px;background:#111;color:white;border:1px solid #555;border-radius:7px}
+button,.btn{background:#ed2436;color:white;padding:14px 22px;border:0;border-radius:7px;font-weight:bold;text-decoration:none;cursor:pointer}
+small{color:#aaa}
+</style>
+</head>
+<body>
+<header>
+<div style="font-size:65px">🐺</div>
+<h1>THE WOLF SQUAD</h1>
+<p>ONE PACK. ONE POWER.</p>
+<p>OFFICIAL TIKTOK SQUAD</p>
+<a class="btn" href="#join">JOIN THE PACK</a>
+</header>
+
+<section>
+<h2>WELCOME TO THE PACK</h2>
+<div class="card">🐺<h3>20 MEMBERS</h3>One Squad, One Family</div>
+<div class="card">👑<h3>OWNER</h3>@dinitha.lk</div>
+<div class="card">🔥<h3>OUR VIBE</h3>TikTok • Creativity • Teamwork</div>
+<a class="btn" href="https://www.tiktok.com/@dinitha.lk">OWNER TIKTOK</a>
+</section>
+
+<section id="join">
+<h2>JOIN THE WOLF SQUAD</h2>
+<form id="joinForm">
+<input name="name" placeholder="Your name" required maxlength="60">
+<input name="tiktok" placeholder="TikTok username" required maxlength="40">
+<textarea name="reason" placeholder="Why do you want to join?" required maxlength="500"></textarea>
+<button type="submit">SUBMIT REGISTRATION</button>
+</form>
+<p><small>Registration will open WhatsApp for you to review and send your details.</small></p>
+</section>
+
+<footer style="padding:25px;color:#aaa">
+© 2026 THE WOLF SQUAD 🐺
+</footer>
+
+<script>
+document.getElementById('joinForm').addEventListener('submit',function(e){
+e.preventDefault();
+const f=new FormData(this);
+const msg="THE WOLF SQUAD REGISTRATION\n\nName: "+f.get('name')+"\nTikTok: "+f.get('tiktok')+"\nReason: "+f.get('reason');
+window.open("https://wa.me/94713126310?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+</body>
+</html>
