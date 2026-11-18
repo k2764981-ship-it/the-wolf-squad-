@@ -190,5 +190,63 @@ encodeURIComponent(msg),
 });
 </script>
 
+<section class="members">
+  <h1>🐺 THE WOLF SQUAD</h1>
+  <h2>OFFICIAL MEMBERS ❗</h2>
+
+  <div class="member-grid">
+    <script>
+      for (let i = 1; i <= 20; i++) {
+        document.write(`
+          <div class="member-card">
+            <h3>MEMBER ${String(i).padStart(2,'0')} 🐺❗</h3>
+            <p>NAME : NOT ADDED</p>
+            <p>TIKTOK : NOT ADDED</p>
+            <p>POSITION : MEMBER</p>
+          </div>
+        `);
+      }
+    </script>
+  </div>
+</section>
+
+<style>
+.members {
+  background: #050505;
+  color: white;
+  padding: 30px 15px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.members h1 {
+  color: #ff1e35;
+  text-shadow: 0 0 15px red;
+}
+.members h2 {
+  color: white;
+  letter-spacing: 3px;
+}
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+.member-card {
+  background: linear-gradient(145deg,#171717,#080808);
+  border: 1px solid #a00018;
+  border-radius: 14px;
+  padding: 18px 8px;
+  box-shadow: 0 0 12px #51000d;
+}
+.member-card h3 {
+  color: #ff263e;
+  font-size: 15px;
+}
+.member-card p {
+  color: #ddd;
+  font-size: 12px;
+}
+</style>
+
 </body>
 </html>
