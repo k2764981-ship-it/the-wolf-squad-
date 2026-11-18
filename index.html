@@ -1,61 +1,129 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>THE WOLF SQUAD</title>
 <style>
 body{margin:0;background:#080808;color:white;font-family:Arial;text-align:center}
-header{padding:80px 15px;background:radial-gradient(circle,#4b080e,#080808)}
-h1{font-size:42px;color:#ff2638}
+header{padding:65px 15px;background:radial-gradient(circle,#4b080e,#080808)}
+h1{font-size:36px;color:#ff2638}
 h2{color:#ff2638}
 section{padding:35px 15px}
 .card{background:#171717;padding:22px;margin:12px;border:1px solid #68202a;border-radius:12px}
-input,textarea{display:block;width:90%;max-width:450px;margin:12px auto;padding:14px;background:#111;color:white;border:1px solid #555;border-radius:7px}
+input,textarea,select{display:block;width:90%;max-width:450px;margin:12px auto;padding:14px;background:#111;color:white;border:1px solid #555;border-radius:7px}
 button,.btn{background:#ed2436;color:white;padding:14px 22px;border:0;border-radius:7px;font-weight:bold;text-decoration:none;cursor:pointer}
+label{display:block;margin:14px;color:#ff5967}
+.group{color:#ff2638;font-weight:bold;margin-top:25px}
 small{color:#aaa}
 </style>
 </head>
 <body>
+
 <header>
-<div style="font-size:65px">🐺</div>
-<h1>THE WOLF SQUAD</h1>
-<p>ONE PACK. ONE POWER.</p>
+<div style="font-size:65px">𓆩🐺𓆪</div>
+<h1>THE WOLF SQUAD 🐺❗</h1>
+<p>ONE TEAM • ONE FAMILY 👑</p>
 <p>OFFICIAL TIKTOK SQUAD</p>
+<p>OWNER: <b style="color:#ff2638">WOLFY "🐺 !</b></p>
 <a class="btn" href="#join">JOIN THE PACK</a>
 </header>
 
 <section>
 <h2>WELCOME TO THE PACK</h2>
-<div class="card">🐺<h3>20 MEMBERS</h3>One Squad, One Family</div>
-<div class="card">👑<h3>OWNER</h3>@dinitha.lk</div>
+<div class="card">🐺<h3>20 MEMBERS</h3>One Squad • One Family</div>
+<div class="card">👑<h3>OWNER</h3>WOLFY "🐺 !</div>
 <div class="card">🔥<h3>OUR VIBE</h3>TikTok • Creativity • Teamwork</div>
-<a class="btn" href="https://www.tiktok.com/@dinitha.lk">OWNER TIKTOK</a>
 </section>
 
 <section id="join">
-<h2>JOIN THE WOLF SQUAD</h2>
+<h2>𓆩🐺𓆪 OFFICIAL MEMBER FORM 🐺</h2>
+
 <form id="joinForm">
-<input name="name" placeholder="Your name" required maxlength="60">
-<input name="tiktok" placeholder="TikTok username" required maxlength="40">
-<textarea name="reason" placeholder="Why do you want to join?" required maxlength="500"></textarea>
-<button type="submit">SUBMIT REGISTRATION</button>
+
+<div class="group">📝 PERSONAL DETAILS</div>
+
+<label>සම්පූර්ණ නම *</label>
+<input name="fullname" required placeholder="සම්පූර්ණ නම">
+
+<label>මුලකුරු සමඟ නම</label>
+<input name="initialname" placeholder="මුලකුරු සමඟ නම">
+
+<label>වයස් කාණ්ඩය *</label>
+<select name="age" required>
+<option value="">තෝරන්න</option>
+<option>13–15</option>
+<option>16–17</option>
+<option>18+</option>
+</select>
+
+<div class="group">📱 SOCIAL MEDIA DETAILS</div>
+
+<label>TikTok Page එකේ නම *</label>
+<input name="tiktok" required placeholder="@username">
+
+<label>තමන් සතු Pages ගණන</label>
+<input name="pages" type="number" min="0" max="50">
+
+<label>එම Pages වල නම්</label>
+<textarea name="pagenames" placeholder="Page names"></textarea>
+
+<div class="group">🐺 SQUAD DETAILS</div>
+
+<label>කලින් හිටපු Squads වල නම්</label>
+<textarea name="squads" placeholder="Squad names"></textarea>
+
+<label>අපගේ Rules වලට එකඟද? *</label>
+<select name="rules" required>
+<option value="">තෝරන්න</option>
+<option>ඔව්, එකඟයි</option>
+<option>නැහැ</option>
+</select>
+
+<label style="display:block;color:#aaa;font-size:13px">
+<input type="checkbox" required style="width:auto;display:inline">
+මගේ තොරතුරු නිවැරදි බව තහවුරු කරමි.
+</label>
+
+<button type="submit">SUBMIT REGISTRATION 🐺</button>
+
+<p><small>ඔබගේ සම්පූර්ණ නිවසේ ලිපිනය හෝ පුද්ගලික දුරකථන අංකය මෙහි ඇතුළත් නොකරන්න.</small></p>
 </form>
-<p><small>Registration will open WhatsApp for you to review and send your details.</small></p>
 </section>
 
 <footer style="padding:25px;color:#aaa">
-© 2026 THE WOLF SQUAD 🐺
+<b style="color:#ff2638">𓆩🐺𓆪 THE WOLF SQUAD 🐺❗</b>
+<p>ONE TEAM • ONE FAMILY 👑</p>
 </footer>
 
 <script>
 document.getElementById('joinForm').addEventListener('submit',function(e){
 e.preventDefault();
 const f=new FormData(this);
-const msg="THE WOLF SQUAD REGISTRATION\n\nName: "+f.get('name')+"\nTikTok: "+f.get('tiktok')+"\nReason: "+f.get('reason');
-window.open("https://wa.me/94713126310?text="+encodeURIComponent(msg),"_blank");
+
+const msg=[
+'𓆩🐺𓆪 THE WOLF SQUAD OFFICIAL MEMBER FORM',
+'',
+'Owner: WOLFY "🐺 !',
+'Full Name: '+f.get('fullname'),
+'Initial Name: '+(f.get('initialname')||'Not provided'),
+'Age Range: '+f.get('age'),
+'TikTok: '+f.get('tiktok'),
+'Pages Count: '+(f.get('pages')||'Not provided'),
+'Page Names: '+(f.get('pagenames')||'Not provided'),
+'Previous Squads: '+(f.get('squads')||'Not provided'),
+'Rules: '+f.get('rules'),
+'',
+'ONE TEAM • ONE FAMILY'
+].join('\n');
+
+window.open(
+'https://wa.me/94713126310?text='+encodeURIComponent(msg),
+'_blank'
+);
 });
 </script>
+
 </body>
 </html>
