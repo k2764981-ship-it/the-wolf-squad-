@@ -9,411 +9,238 @@
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#080808;color:white;
- font-family:Arial,sans-serif;text-align:center
+ margin:0;background:#050505;color:white;
+ font-family:Arial,sans-serif;text-align:center;
 }
 header{
- padding:45px 15px;
- background:radial-gradient(circle,#50000b,#080808 75%)
+ padding:40px 15px 55px;
+ background:radial-gradient(circle,#42000b,#080808 70%);
 }
-img{object-fit:cover}
 .squad-logo{
- width:230px;height:230px;border-radius:50%;
- border:3px solid white;
- box-shadow:0 0 25px red
+ width:190px;height:190px;object-fit:cover;
+ border-radius:50%;border:3px solid white;
+ box-shadow:0 0 25px red;
+}
+h1{font-size:32px}
+.red{color:#ff263e}
+.subtitle{letter-spacing:3px}
+button{
+ background:#e51d35;color:white;border:0;
+ padding:14px 25px;border-radius:10px;
+ font-weight:bold;font-size:16px;cursor:pointer;
+}
+section{
+ max-width:750px;margin:auto;padding:35px 16px;
+}
+.card{
+ background:#151515;border:1px solid #75101e;
+ border-radius:16px;padding:22px;margin:16px 0;
+ box-shadow:0 0 12px #30000a;
 }
 .owner-logo{
- width:170px;height:170px;border-radius:50%;
- border:3px solid white
- 
-<!-- THE WOLF SQUAD RULES -->
-<section class="wolf-rules">
-
-  <h1>🐺 THE WOLF SQUAD</h1>
-  <h2>OFFICIAL SQUAD RULES</h2>
-
-  <div class="rules-owner">
-    👑 GANG OWNER<br>
-    <span>ա օ ʟ ʄ ʏ " 🐺!</span>
-  </div>
-
-  <h3>❗ අනිවාර්යයෙන් කියවන්න ❗</h3>
-
-  <div class="rule">
-    <b>01.</b>
-    අපේ SQUAD එකට අදාළ LOGO එකක් ලබා දෙනු ලැබේ.
-    එය ඔබගේ TIKTOK PAGE එකේ LOGO එක ලෙස භාවිතා කළ යුතුයි.
-  </div>
-
-  <div class="rule">
-    <b>02.</b>
-    අපේ SQUAD එකේ සම්පූර්ණ නම ඔබගේ TIKTOK PAGE එකේ BIO එකට දැමිය යුතුයි.
-
-    <p>උදාහරණය:</p>
-    <strong>𝙏𝙃𝙀 𝙒𝙊𝙇𝙁 𝙎𝙌𝙐𝘼𝘿 🐺❗</strong>
-  </div>
-
-  <h3>⚠ අවධානය යොමු කරන්න ⚠</h3>
-
-  <div class="rule">
-    <b>03.</b>
-    අපගේ SQUAD GROUP එකේ සාකච්ඡා කරන දේවල් කිසිම SQUAD එකකට හෝ ඔබගේ හිතවතුන් වෙත ලබා නොදෙන ලෙස කාරුණිකව ඉල්ලා සිටිමු.
-  </div>
-
-  <div class="rule">
-    <b>04.</b>
-    ඔබ අපගේ SQUAD එකට JOIN වී තිබෙන TIKTOK PAGE එකෙන් වෙනත් SQUAD වලට JOIN වීම තහනම් වේ.
-  </div>
-
-  <div class="rule">
-    <b>05.</b>
-    ඔබට හෝ අපගේ SQUAD එකට කවුරුන් හෝ DISS කළහොත් ඔබ DISS නොකර වහාම ADMIN කෙනෙකු දැනුවත් කරන්න.
-  </div>
-
-  <div class="rule">
-    <b>06.</b>
-    ඔබට හෝ අපගේ SQUAD එකට කවුරුන් හෝ බැන වදින්නේ නම් වහාම ADMIN කෙනෙකු දැනුවත් කරන්න.
-  </div>
-
-  <div class="rule">
-    <b>07.</b>
-    ඔබගේ STATUS අපගේ SQUAD GROUP එකේ MENTION කිරීමෙන් වළකින්න.
-  </div>
-
-  <div class="rule">
-    <b>08.</b>
-    අපගේ SQUAD GROUP එකට JOIN වී තිබෙන WhatsApp NUMBER එකෙන් WhatsApp BOT භාවිතා කිරීමෙන් වළකින්න.
-  </div>
-
-  <div class="rules-warning">
-    ⚠ අවසාන දැනුම්දීම ⚠
-
-    <p>මෙම නීතිවලින් එකක් හෝ කඩකර තිබුණහොත් SQUAD එකෙන් REMOVE කරනු ලැබේ.</p>
-
-    🐺 THE WOLF SQUAD ❗
-  </div>
-
-  <label class="agree">
-    <input type="checkbox" id="rulesAgree">
-    I HAVE READ AND AGREE TO THE RULES 🐺
-  </label>
-
-</section>
-
-<style>
-.wolf-rules {
-  background: #080808;
-  color: white;
-  padding: 25px 16px;
-  max-width: 700px;
-  margin: auto;
-  font-family: Arial, sans-serif;
-  text-align: center;
+ width:145px;height:145px;object-fit:cover;
+ border-radius:50%;border:3px solid white;
+ box-shadow:0 0 18px red;
 }
-
-.wolf-rules h1 {
-  color: #ff2638;
-  text-shadow: 0 0 15px red;
-  font-size: 28px;
+.owner-name{font-size:26px;color:#ff263e}
+.rule{
+ background:#151515;border-left:4px solid #ed2638;
+ border-radius:10px;padding:17px;margin:13px 0;
+ text-align:left;line-height:1.8;font-size:14px;
 }
-
-.wolf-rules h2 {
-  letter-spacing: 3px;
-  color: white;
-  font-size: 17px;
+.rule b{color:#ff3448}
+h2{color:#ff263e;letter-spacing:2px}
+.warning{
+ background:#27050a;border:1px solid red;
+ padding:20px;border-radius:12px;
+ margin-top:22px;line-height:1.8;
 }
-
-.rules-owner {
-  background: #171717;
-  border: 1px solid #a00018;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 25px 0;
-  color: #ff2638;
-  font-weight: bold;
-  line-height: 2;
-}
-
-.rules-owner span {
-  font-size: 22px;
-}
-
-.wolf-rules h3 {
-  color: #ff2638;
-  margin: 25px 0;
-}
-
-.rule {
-  background: #151515;
-  border: 1px solid #6b101c;
-  border-left: 4px solid #ff2638;
-  border-radius: 12px;
-  padding: 17px;
-  margin: 13px 0;
-  text-align: left;
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-.rule b {
-  color: #ff2638;
-  font-size: 18px;
-}
-
-.rule strong {
-  color: #ff2638;
-}
-
-.rules-warning {
-  background: #210509;
-  border: 1px solid red;
-  box-shadow: 0 0 15px #55000b;
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 25px;
-  color: #ff3448;
-  font-weight: bold;
-  line-height: 1.8;
-}
-
-.rules-warning p {
-  color: white;
-}
-
-.agree {
-  display: block;
-  margin-top: 25px;
-  padding: 15px;
-  color: white;
-  font-size: 13px;
-}
-.agree input {
-  accent-color: red;
-}
-</style>
-
-}
-h1{font-size:35px}
-h1 span,h2{color:#ed2638}
-section{padding:30px 15px;max-width:700px;margin:auto}
-.card,form{
- background:#151515;border:1px solid #77202b;
- border-radius:15px;padding:22px;margin:15px auto
-}
-label{
- display:block;text-align:left;
- margin:14px 0 7px;font-weight:bold
-}
+label{display:block;text-align:left;margin:13px 0 6px}
 input,textarea,select{
- width:100%;padding:13px;
- background:#080808;color:white;
- border:1px solid #555;border-radius:7px;
- font-size:15px
+ width:100%;padding:13px;border-radius:8px;
+ border:1px solid #77202a;background:#090909;
+ color:white;font-size:15px;
 }
-textarea{min-height:75px}
-.group{
- color:#ff3448;text-align:left;
- font-weight:bold;margin-top:25px
+input[type=checkbox]{
+ width:auto;accent-color:red;
 }
-button,.btn{
- display:inline-block;background:#e92336;
- color:white;border:0;border-radius:8px;
- padding:14px 22px;font-weight:bold;
- text-decoration:none;cursor:pointer;margin:12px
+.agree{text-align:left;line-height:1.8;margin:20px 0}
+.form-button{width:100%;margin-top:15px}
+.member-grid{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:13px;
 }
-.note{color:#aaa;font-size:13px;line-height:1.6}
-footer{padding:25px;border-top:1px solid #55202a;color:#aaa}
+.member{
+ background:linear-gradient(145deg,#1b1b1b,#080808);
+ border:1px solid #8e1425;border-radius:12px;
+ padding:18px 8px;box-shadow:0 0 10px #36000a;
+}
+.member h3{color:#ff263e;font-size:15px}
+footer{
+ padding:30px 10px;color:#aaa;
+ background:#100407;border-top:1px solid #6e1020;
+}
+a{color:white}
+@media(min-width:600px){
+ .member-grid{grid-template-columns:repeat(3,1fr)}
+}
 </style>
 </head>
 
 <body>
 
+<!-- HOME -->
 <header>
-<img src="squad-logo.jpg" class="squad-logo" alt="Squad Logo">
+<img class="squad-logo" src="squad-logo.jpg" alt="Squad Logo">
 
-<h1>THE <span>WOLF</span> SQUAD 🐺❗</h1>
+<h1>THE <span class="red">WOLF</span> SQUAD 🐺❗</h1>
+<p class="subtitle">ONE TEAM • ONE FAMILY 👑</p>
 
-<p>ONE TEAM • ONE FAMILY 👑</p>
-
-<a href="#join" class="btn">JOIN THE SQUAD</a>
+<a href="#register">
+<button>JOIN THE SQUAD</button>
+</a>
 </header>
 
+<!-- OWNER -->
 <section>
 <h2>👑 SQUAD OWNER</h2>
-
 <div class="card">
-<img src="owner-logo.jpg" class="owner-logo" alt="Owner Logo">
-
-<h2>WOLFY "🐺 !</h2>
-
+<img class="owner-logo" src="owner-logo.jpg" alt="Owner Logo">
+<h2 class="owner-name">WOLFY " 🐺 !</h2>
 <p>FOUNDER • LEADER • LEGEND</p>
 </div>
 </section>
 
-<section id="join">
-<h2>𓆩🐺𓆪 OFFICIAL MEMBER FORM</h2>
+<!-- RULES -->
+<section id="rules">
+<h2>🐺 OFFICIAL SQUAD RULES</h2>
+<p class="red">GANG OWNER OF THE WOLFY 🐺❗</p>
+<h3>❗ අනිවාර්යයෙන් කියවන්න ❗</h3>
 
-<form id="joinForm">
-
-<div class="group">
-📝 PERSONAL DETAILS
+<div class="rule">
+<b>01.</b> අපේ SQUAD එකට අදාළ LOGO එකක් හදා දෙනු ලැබේ. එය ඔබගේ TIKTOK PAGE එකේ LOGO එක ලෙස භාවිතා කළ යුතුයි❗
 </div>
 
-<label>➊ සම්පූර්ණ නම *</label>
-<input name="fullname" required>
-
-<label>➋ මුලකුරු සමඟ නම</label>
-<input name="initialname">
-
-<label>➌ වයස් කාණ්ඩය *</label>
-<select name="age" required>
-<option value="">Select</option>
-<option>13–15</option>
-<option>16–17</option>
-<option>18+</option>
-</select>
-
-<div class="group">
-📱 SOCIAL MEDIA DETAILS
+<div class="rule">
+<b>02.</b> අපේ SQUAD එකේ මුළු නම ඔබගේ TIKTOK PAGE එකේ BIO එකට දැමිය යුතුයි❗
+<br><br>
+උදා: 𝙏𝙃𝙀 𝙒𝙊𝙇𝙁 𝙎𝙌𝙐𝘼𝘿 🐺❗
 </div>
 
-<label>➏ TikTok Page එකේ නම *</label>
-<input name="tiktok" required placeholder="@username">
+<h3 class="red">⚠ අවධානය යොමු කරන්න ⚠</h3>
 
-<label>➐ තමන් සතු Pages ගණන</label>
-<input name="pages" type="number" min="0">
-
-<label>➑ එම Pages වල නම්</label>
-<textarea name="pagenames"></textarea>
-
-<div class="group">
-🐺 SQUAD DETAILS
+<div class="rule">
+<b>03.</b> අපේ SQUAD එකේ GROUP එකේ සාකච්ඡා කරන දේවල් කිසිම SQUAD එකකට හෝ ඔබගේ හිතවතුන් වෙත ලබා නොදෙන ලෙස කාරුණික වන්න❗
 </div>
 
-<label>➒ කලින් හිටපු Squads වල නම්</label>
-<textarea name="squads"></textarea>
+<div class="rule">
+<b>04.</b> ඔබ අපගේ SQUAD එකට JOIN වී තිබෙන TIKTOK PAGE එකෙන් වෙනත් SQUAD වලට JOIN වෙන්න බෑ❗
+</div>
 
-<label>➓ අපේ Rules වලට එකඟද? *</label>
-<select name="rules" required>
-<option value="">Select</option>
-<option>ඔව්, එකඟයි</option>
-<option>නැහැ</option>
-</select>
+<div class="rule">
+<b>05.</b> ඔබට හෝ අපගේ SQUAD එකට DISS කර තිබුණොත් ඔබ DISS නොකර වහාම ADMIN කෙනෙකු දැනුවත් කරන්න❗
+</div>
 
-<label style="font-weight:normal">
-<input type="checkbox" required style="width:auto">
- මගේ තොරතුරු නිවැරදි බව තහවුරු කරමි.
+<div class="rule">
+<b>06.</b> ඔබට හෝ අපගේ SQUAD එකට කවුරුන් හෝ බැන වදින්නේ නම් වහාම ADMIN කෙනෙකු දැනුවත් කරන්න❗
+</div>
+
+<div class="rule">
+<b>07.</b> ඔබගේ STATUS අපගේ SQUAD GROUP එකේ MENTION කිරීමෙන් වළකින්න❗
+</div>
+
+<div class="rule">
+<b>08.</b> අපගේ SQUAD GROUP එකට JOIN වී තිබෙන WHATSAPP NUMBER එකෙන් WHATSAPP BOT USE කිරීමෙන් වළකින්න❗
+</div>
+
+<div class="warning">
+<h3>⚠ අවසාන දැනුම්දීම ⚠</h3>
+මෙම නීති එකක් හෝ කඩකර තිබුණොත් SQUAD එකෙන් REMOVE කරනු ලැබේ❗
+<br><br>
+<b>🐺 THE WOLF SQUAD ❗</b>
+</div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="register">
+<h2>🐺 OFFICIAL MEMBER FORM</h2>
+<p>THE WOLF SQUAD • MEMBER REGISTRATION</p>
+
+<form id="memberForm">
+
+<div class="card">
+<h3 class="red">📝 PERSONAL DETAILS</h3>
+
+<label>➊ සම්පූර්ණ නම</label>
+<input type="text" placeholder="ඔබගේ නම" required>
+
+<label>➋ TikTok Username</label>
+<input type="text" placeholder="@username" required>
+
+<label>➌ ළඟම නගරය (විකල්ප)</label>
+<input type="text" placeholder="ඔබගේ නගරය">
+
+<h3 class="red">📱 SOCIAL MEDIA DETAILS</h3>
+
+<label>➍ තමන් සතු Pages ගණන</label>
+<input type="number" min="0" placeholder="Pages ගණන">
+
+<label>➎ එම Pages වල නම්</label>
+<textarea rows="3" placeholder="Page names"></textarea>
+
+<h3 class="red">🐺 SQUAD DETAILS</h3>
+
+<label>➏ කලින් හිටපු Squads වල නම්</label>
+<textarea rows="2" placeholder="Squad names"></textarea>
+
+<div class="agree">
+<label>
+<input type="checkbox" id="agreeRules" required>
+මම ඉහත SQUAD RULES කියවා තේරුම්ගෙන ඒවාට එකඟ වෙමි 🐺❗
 </label>
+</div>
 
-<p class="note">
-ඔබගේ පෞද්ගලික ලිපිනය හෝ වෙනත් සංවේදී තොරතුරු මෙහි ඇතුළත් නොකරන්න.
-</p>
-
-<button type="submit">
-SUBMIT VIA WHATSAPP 🐺
+<button class="form-button" type="submit">
+SUBMIT REGISTRATION 🐺
 </button>
 
-<p class="note">
-Submit කළ පසු WhatsApp විවෘත වේ.
-විස්තර පරීක්ෂා කර Send කරන්න.
-</p>
-
+</div>
 </form>
+<p id="formMessage" class="red"></p>
+</section>
+
+<!-- MEMBERS 01-20 -->
+<section id="members">
+<h2>🐺 OFFICIAL SQUAD MEMBERS</h2>
+<div class="member-grid" id="memberGrid"></div>
 </section>
 
 <footer>
-<h3>𓆩🐺𓆪 THE WOLF SQUAD 🐺❗</h3>
+<h2>🐺 THE WOLF SQUAD ❗</h2>
 <p>ONE TEAM • ONE FAMILY 👑</p>
-<p>OWNER : WOLFY "🐺 !</p>
+<p>OWNER : WOLFY 🐺❗</p>
 </footer>
 
 <script>
-document.getElementById("joinForm")
+const grid=document.getElementById("memberGrid");
+
+for(let i=1;i<=20;i++){
+ const number=String(i).padStart(2,"0");
+ grid.innerHTML+=`
+ <div class="member">
+ <h3>MEMBER ${number} 🐺❗</h3>
+ <p>NAME : NOT ADDED</p>
+ <p>TIKTOK : NOT ADDED</p>
+ </div>`;
+}
+
+document.getElementById("memberForm")
 .addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const f=new FormData(this);
-
-const msg=
-"THE WOLF SQUAD - MEMBER FORM\n\n"+
-"OWNER: WOLFY 🐺\n\n"+
-"Full Name: "+f.get("fullname")+"\n"+
-"Initial Name: "+(f.get("initialname")||"-")+"\n"+
-"Age: "+f.get("age")+"\n"+
-"TikTok: "+f.get("tiktok")+"\n"+
-"Pages Count: "+(f.get("pages")||"-")+"\n"+
-"Page Names: "+(f.get("pagenames")||"-")+"\n"+
-"Previous Squads: "+(f.get("squads")||"-")+"\n"+
-"Rules: "+f.get("rules")+"\n\n"+
-"ONE TEAM • ONE FAMILY 🐺";
-
-window.open(
-"https://wa.me/94713126310?text="+
-encodeURIComponent(msg),
-"_blank"
-);
-
+ e.preventDefault();
+ document.getElementById("formMessage").textContent=
+ "FORM DESIGN READY! Registration submission needs a connected form service.";
 });
 </script>
-
-<section class="members">
-  <h1>🐺 THE WOLF SQUAD</h1>
-  <h2>OFFICIAL MEMBERS ❗</h2>
-
-  <div class="member-grid">
-    <script>
-      for (let i = 1; i <= 20; i++) {
-        document.write(`
-          <div class="member-card">
-            <h3>MEMBER ${String(i).padStart(2,'0')} 🐺❗</h3>
-            <p>NAME : NOT ADDED</p>
-            <p>TIKTOK : NOT ADDED</p>
-            <p>POSITION : MEMBER</p>
-          </div>
-        `);
-      }
-    </script>
-  </div>
-</section>
-
-<style>
-.members {
-  background: #050505;
-  color: white;
-  padding: 30px 15px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-.members h1 {
-  color: #ff1e35;
-  text-shadow: 0 0 15px red;
-}
-.members h2 {
-  color: white;
-  letter-spacing: 3px;
-}
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 15px;
-}
-.member-card {
-  background: linear-gradient(145deg,#171717,#080808);
-  border: 1px solid #a00018;
-  border-radius: 14px;
-  padding: 18px 8px;
-  box-shadow: 0 0 12px #51000d;
-}
-.member-card h3 {
-  color: #ff263e;
-  font-size: 15px;
-}
-.member-card p {
-  color: #ddd;
-  font-size: 12px;
-}
-</style>
 
 </body>
 </html>
