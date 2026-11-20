@@ -4,15 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE WOLF SQUAD</title>
+<meta name="theme-color" content="#080808">
+<title>THE WOLF SQUAD 🐺</title>
+
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#080808;
- color:white;
- text-align:center;
+ margin:0;background:#080808;color:white;
+ font-family:Arial,sans-serif;text-align:center;
 }
 header{
  padding:35px 15px;
@@ -32,11 +31,9 @@ h1{
 .tagline{letter-spacing:3px;color:#ddd}
 section{padding:25px 14px}
 .card{
- max-width:850px;margin:18px auto;
- padding:22px;background:#111;
- border:1px solid #650000;
- border-radius:14px;
- box-shadow:0 0 15px #240000;
+ max-width:850px;margin:18px auto;padding:22px;
+ background:#111;border:1px solid #650000;
+ border-radius:14px;box-shadow:0 0 15px #240000;
 }
 .owner-logo{
  width:115px;height:115px;object-fit:cover;
@@ -46,15 +43,15 @@ h2{color:#ff2929}
 .owner-name{font-size:23px;font-weight:bold}
 .rules{text-align:left;line-height:1.8}
 .rules li{margin:8px 0}
-input,select,textarea{
+input:not([type=checkbox]),select,textarea{
  width:100%;padding:13px;margin:7px 0;
  background:#080808;color:white;
  border:1px solid #700000;border-radius:7px;
 }
 button{
- padding:13px 24px;background:#bd0000;
- color:white;border:0;border-radius:8px;
- font-weight:bold;cursor:pointer;margin-top:12px;
+ padding:13px 24px;background:#bd0000;color:white;
+ border:0;border-radius:8px;font-weight:bold;
+ cursor:pointer;margin-top:12px;
 }
 button:hover{background:#f00000}
 .member-grid{
@@ -69,6 +66,7 @@ button:hover{background:#f00000}
 .member h3{color:#ff3030;margin:5px}
 .member p{color:#ccc;overflow-wrap:anywhere}
 .member a{color:#ff5555;text-decoration:none}
+.member a:hover{text-decoration:underline}
 footer{
  padding:25px;color:#888;
  border-top:1px solid #650000;margin-top:30px;
@@ -76,6 +74,7 @@ footer{
 .small{font-size:13px;color:#aaa}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -136,7 +135,7 @@ footer{
 <textarea id="previous" placeholder="Previous Squad Names (Optional)"></textarea>
 
 <label style="display:block;text-align:left;margin-top:12px">
-<input type="checkbox" id="agree" required style="width:auto">
+<input type="checkbox" id="agree" required>
  I have read and agree to the Squad Rules.
 </label>
 
@@ -148,6 +147,7 @@ footer{
 
 <section>
 <h2>🐺 OFFICIAL SQUAD MEMBERS 🐺</h2>
+<p class="small">11 OFFICIAL MEMBERS • 20 MEMBER SLOTS</p>
 <div class="member-grid" id="members"></div>
 </section>
 
@@ -167,9 +167,9 @@ const members = [
 ["SCORPY","scorpyqtz"],
 ["RIO","admin_shana"],
 ["LOST TIME","jeramnethusara_losttime"],
-["MEMBER 09",""],
-["MEMBER 10",""],
-["MEMBER 11",""],
+["RUBYY","rubby_825"],
+["DULA","_the_dula"],
+["KALANI","kalani_quotes"],
 ["MEMBER 12",""],
 ["MEMBER 13",""],
 ["MEMBER 14",""],
@@ -181,16 +181,18 @@ const members = [
 ["MEMBER 20",""]
 ];
 
-const container = document.getElementById("members");
+const container=document.getElementById("members");
 
-members.forEach((member,index)=>{
+members.forEach(member=>{
  const card=document.createElement("div");
  card.className="member";
+
  const title=document.createElement("h3");
  title.textContent="🐺 "+member[0];
  card.appendChild(title);
 
  const username=document.createElement("p");
+
  if(member[1]){
   username.textContent="@"+member[1];
   const link=document.createElement("a");
@@ -204,23 +206,27 @@ members.forEach((member,index)=>{
   username.textContent="Not Added Yet";
   card.appendChild(username);
  }
+
  container.appendChild(card);
 });
 
 document.getElementById("registerForm").addEventListener("submit",function(e){
  e.preventDefault();
 
- const message =
- "THE WOLF SQUAD - NEW REGISTRATION%0A%0A"+
- "Name: "+encodeURIComponent(document.getElementById("fullname").value)+"%0A"+
- "TikTok: "+encodeURIComponent(document.getElementById("tiktok").value)+"%0A"+
- "Age Range: "+encodeURIComponent(document.getElementById("age").value)+"%0A"+
- "Nearest Town: "+encodeURIComponent(document.getElementById("city").value)+"%0A"+
- "Number of Pages: "+encodeURIComponent(document.getElementById("pages").value)+"%0A"+
- "Page Names: "+encodeURIComponent(document.getElementById("pagenames").value)+"%0A"+
- "Previous Squads: "+encodeURIComponent(document.getElementById("previous").value);
+ const fields=[
+  ["Name",document.getElementById("fullname").value],
+  ["TikTok",document.getElementById("tiktok").value],
+  ["Age Range",document.getElementById("age").value],
+  ["Nearest Town",document.getElementById("city").value],
+  ["Number of Pages",document.getElementById("pages").value],
+  ["Page Names",document.getElementById("pagenames").value],
+  ["Previous Squads",document.getElementById("previous").value]
+ ];
 
- const url="https://wa.me/94713126310?text="+message;
+ const message="THE WOLF SQUAD - NEW REGISTRATION\n\n"+
+ fields.map(item=>item[0]+": "+item[1]).join("\n");
+
+ const url="https://wa.me/94713126310?text="+encodeURIComponent(message);
  window.open(url,"_blank");
 });
 </script>
