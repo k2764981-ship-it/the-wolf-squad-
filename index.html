@@ -10,8 +10,11 @@
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#080808;color:white;
- font-family:Arial,sans-serif;text-align:center;
+ margin:0;
+ background:#080808;
+ color:white;
+ font-family:Arial,sans-serif;
+ text-align:center;
 }
 header{
  padding:35px 15px;
@@ -19,56 +22,96 @@ header{
  border-bottom:2px solid #d00000;
 }
 .squad-logo{
- width:145px;height:145px;object-fit:cover;
- border-radius:50%;border:3px solid #e00000;
+ width:145px;
+ height:145px;
+ object-fit:cover;
+ border-radius:50%;
+ border:3px solid #e00000;
  box-shadow:0 0 25px #a00000;
 }
 h1{
- color:#ff2020;font-size:clamp(25px,6vw,40px);
+ color:#ff2020;
+ font-size:clamp(25px,6vw,40px);
  text-shadow:0 0 15px #a00000;
 }
 .tagline{letter-spacing:3px;color:#ddd}
 section{padding:25px 14px}
 .card{
- max-width:850px;margin:18px auto;padding:22px;
- background:#111;border:1px solid #650000;
- border-radius:14px;box-shadow:0 0 15px #240000;
+ max-width:850px;
+ margin:18px auto;
+ padding:22px;
+ background:#111;
+ border:1px solid #650000;
+ border-radius:14px;
+ box-shadow:0 0 15px #240000;
 }
 .owner-logo{
- width:115px;height:115px;object-fit:cover;
- border-radius:50%;border:3px solid #e00000;
+ width:115px;
+ height:115px;
+ object-fit:cover;
+ border-radius:50%;
+ border:3px solid #e00000;
 }
 h2{color:#ff2929}
 .owner-name{font-size:23px;font-weight:bold}
 .rules{text-align:left;line-height:1.8}
 .rules li{margin:8px 0}
+
 input:not([type=checkbox]),select,textarea{
- width:100%;padding:13px;margin:7px 0;
- background:#080808;color:white;
- border:1px solid #700000;border-radius:7px;
+ width:100%;
+ padding:13px;
+ margin:7px 0;
+ background:#080808;
+ color:white;
+ border:1px solid #700000;
+ border-radius:7px;
 }
 button{
- padding:13px 24px;background:#bd0000;color:white;
- border:0;border-radius:8px;font-weight:bold;
- cursor:pointer;margin-top:12px;
+ padding:13px 24px;
+ background:#bd0000;
+ color:white;
+ border:0;
+ border-radius:8px;
+ font-weight:bold;
+ cursor:pointer;
+ margin-top:12px;
 }
 button:hover{background:#f00000}
+
 .member-grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:13px;max-width:1000px;margin:auto;
+ gap:13px;
+ max-width:1100px;
+ margin:auto;
 }
 .member{
- background:#111;padding:17px;
- border:1px solid #700000;border-radius:12px;
+ background:#111;
+ padding:17px;
+ border:1px solid #700000;
+ border-radius:12px;
+ box-shadow:0 0 10px #240000;
 }
-.member h3{color:#ff3030;margin:5px}
-.member p{color:#ccc;overflow-wrap:anywhere}
-.member a{color:#ff5555;text-decoration:none}
+.member h3{
+ color:#ff3030;
+ margin:5px;
+}
+.member p{
+ color:#ccc;
+ overflow-wrap:anywhere;
+}
+.member a{
+ display:inline-block;
+ margin-top:5px;
+ color:#ff5555;
+ text-decoration:none;
+}
 .member a:hover{text-decoration:underline}
 footer{
- padding:25px;color:#888;
- border-top:1px solid #650000;margin-top:30px;
+ padding:25px;
+ color:#888;
+ border-top:1px solid #650000;
+ margin-top:30px;
 }
 .small{font-size:13px;color:#aaa}
 </style>
@@ -140,13 +183,17 @@ footer{
 
 <button type="submit">SUBMIT REGISTRATION</button>
 </form>
-<p class="small">WhatsApp එකට යැවීමට පෙර ඔබේ විස්තර පරීක්ෂා කරන්න. Send කිරීම ඔබ විසින්ම තහවුරු කළ යුතුයි.</p>
+
+<p class="small">
+WhatsApp එකට යැවීමට පෙර ඔබේ විස්තර පරීක්ෂා කරන්න.
+Send කිරීම ඔබ විසින්ම තහවුරු කළ යුතුයි.
+</p>
 </div>
 </section>
 
 <section>
 <h2>🐺 OFFICIAL SQUAD MEMBERS 🐺</h2>
-<p class="small">17 OFFICIAL MEMBERS • 20 MEMBER SLOTS</p>
+<p class="small">21 OFFICIAL MEMBERS 👑</p>
 <div class="member-grid" id="members"></div>
 </section>
 
@@ -175,9 +222,10 @@ const members = [
 ["MALIYA","maliya_qtz_"],
 ["REAPER","reaperquotez"],
 ["RAPTOR","dp_gang05"],
-["MEMBER 18",""],
-["MEMBER 19",""],
-["MEMBER 20",""]
+["ZEEO","zee o0.0".replace(" ","")],
+["VIBEXERO","vibexero444"],
+["DEMA","demaa.qtz"],
+["DEEW","deew_qoutes"]
 ];
 
 const container=document.getElementById("members");
@@ -192,20 +240,16 @@ members.forEach(member=>{
 
  const username=document.createElement("p");
 
- if(member[1]){
-  username.textContent="@"+member[1];
-  const link=document.createElement("a");
-  link.href="https://www.tiktok.com/@"+encodeURIComponent(member[1]);
-  link.target="_blank";
-  link.rel="noopener noreferrer";
-  link.textContent="VIEW TIKTOK";
-  card.appendChild(username);
-  card.appendChild(link);
- }else{
-  username.textContent="Not Added Yet";
-  card.appendChild(username);
- }
+ username.textContent="@"+member[1];
 
+ const link=document.createElement("a");
+ link.href="https://www.tiktok.com/@"+encodeURIComponent(member[1]);
+ link.target="_blank";
+ link.rel="noopener noreferrer";
+ link.textContent="VIEW TIKTOK";
+
+ card.appendChild(username);
+ card.appendChild(link);
  container.appendChild(card);
 });
 
