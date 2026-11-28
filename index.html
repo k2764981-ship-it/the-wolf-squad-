@@ -14,64 +14,84 @@ body{
   font-family:Arial,sans-serif;
 }
 :root{
-  --bg:#080808;--panel:#171717;--card:#222;
-  --white:#fff;--grey:#aaa;--border:#555;
+  --bg:#080808;
+  --panel:#171717;
+  --card:#222;
+  --white:#fff;
+  --grey:#aaa;
+  --border:#555;
 }
-button,a{cursor:pointer}
 a{color:inherit;text-decoration:none}
 
 /* OPENING SCREEN */
 #intro{
   position:fixed;inset:0;z-index:9999;
-  background:radial-gradient(circle,#444 0%,#111 45%,#000 100%);
+  background:radial-gradient(circle,#444,#111 55%,#000);
   display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:20px;
+  text-align:center;padding:15px;
   transition:opacity 1s,visibility 1s;
 }
-#intro.hide{opacity:0;visibility:hidden}
-.intro-content{width:100%;max-width:650px}
+#intro.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.intro-content{width:100%;max-width:700px}
 .wolf{
-  font-size:clamp(100px,30vw,210px);
-  filter:grayscale(1) drop-shadow(0 0 25px #aaa);
-  animation:howl 1.8s infinite alternate;
+  display:block;
+  width:100%;
+  max-width:650px;
+  height:300px;
+  object-fit:cover;
+  object-position:center;
+  margin:0 auto 20px;
+  border-radius:15px;
+  filter:grayscale(1) drop-shadow(0 0 18px #aaa);
+  animation:howl 2s infinite alternate;
 }
 @keyframes howl{
-  from{transform:scale(1) rotate(-3deg)}
-  to{transform:scale(1.09) rotate(3deg)}
+  from{transform:scale(1)}
+  to{transform:scale(1.04)}
 }
 .intro-content h1{
   font-size:clamp(23px,6vw,42px);
   letter-spacing:3px;
   text-shadow:0 0 18px #fff;
 }
-.intro-content p{color:#bbb;margin:15px}
+.intro-content p{color:#bbb;margin:12px}
 .loading{
-  height:8px;background:#444;border-radius:20px;
-  margin:25px auto;max-width:350px;overflow:hidden;
+  height:8px;background:#444;
+  border-radius:20px;margin:25px auto;
+  max-width:350px;overflow:hidden;
 }
 .loading span{
-  display:block;height:100%;width:0;background:white;
-  animation:load 2.8s forwards;
+  display:block;height:100%;width:0;
+  background:white;
+  animation:load 3s forwards;
 }
 @keyframes load{to{width:100%}}
 
 /* HEADER */
 header{
-  background:#111;border-bottom:1px solid #555;
-  padding:18px 12px;text-align:center;
+  background:#111;
+  border-bottom:1px solid #555;
+  padding:20px 12px;text-align:center;
 }
-header h1{font-size:clamp(22px,5vw,35px);letter-spacing:2px}
+header h1{font-size:clamp(22px,5vw,35px)}
 header p{color:#aaa;margin-top:8px}
+
 nav{
-  display:flex;justify-content:center;gap:10px;
-  flex-wrap:wrap;padding:14px;background:#191919;
+  display:flex;justify-content:center;
+  gap:10px;flex-wrap:wrap;
+  padding:14px;background:#191919;
   border-bottom:1px solid #555;
 }
 nav a{
-  padding:9px 14px;border:1px solid #666;
+  padding:9px 14px;
+  border:1px solid #666;
   border-radius:20px;font-size:13px;
 }
-nav a:hover{background:#fff;color:#000}
+nav a:hover{background:white;color:black}
 
 /* GENERAL */
 .container{max-width:1150px;margin:auto;padding:18px}
@@ -84,8 +104,10 @@ nav a:hover{background:#fff;color:#000}
 h2{font-size:21px;margin-bottom:15px}
 .muted{color:#aaa}
 button,.btn{
-  display:inline-block;background:#eee;color:#000;
-  border:0;border-radius:25px;padding:12px 20px;
+  display:inline-block;
+  background:#eee;color:#000;
+  border:0;border-radius:25px;
+  padding:12px 20px;
   font-weight:bold;margin-top:12px;
 }
 button:hover,.btn:hover{background:#aaa}
@@ -93,24 +115,28 @@ button:hover,.btn:hover{background:#aaa}
 /* OWNER */
 .owner{text-align:center}
 .owner img{
-  width:125px;height:125px;object-fit:cover;
-  border-radius:50%;border:3px solid #ddd;
-  margin:12px auto;
+  width:125px;height:125px;
+  object-fit:cover;border-radius:50%;
+  border:3px solid #ddd;margin:12px auto;
 }
 .owner h3{font-size:24px}
 .stats{
-  display:flex;justify-content:center;gap:25px;
-  flex-wrap:wrap;margin-top:15px;color:#ccc;
+  display:flex;justify-content:center;
+  gap:25px;flex-wrap:wrap;
+  margin-top:15px;color:#ccc;
 }
 
 /* MEMBERS */
 .member-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
   gap:10px;
 }
 .member{
-  background:#242424;border:1px solid #555;
-  padding:13px;border-radius:10px;text-align:center;
+  background:#242424;
+  border:1px solid #555;
+  padding:13px;border-radius:10px;
+  text-align:center;
 }
 .member strong{display:block;margin-bottom:6px}
 .member a{color:#ccc;font-size:13px}
@@ -122,44 +148,62 @@ button:hover,.btn:hover{background:#aaa}
   line-height:1.6;color:#ddd;
 }
 .warning{
-  margin-top:15px;padding:13px;border:1px solid #888;
-  text-align:center;color:#fff;border-radius:8px;
+  margin-top:15px;padding:13px;
+  border:1px solid #888;text-align:center;
+  color:#fff;border-radius:8px;
 }
 
-/* FORM */
-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
+/* APPLICATION */
+form{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:13px;
+}
 .field label{display:block;margin-bottom:7px;font-size:14px}
 input,select,textarea{
-  width:100%;padding:12px;background:#090909;
-  color:#fff;border:1px solid #666;border-radius:7px;
+  width:100%;padding:12px;
+  background:#090909;color:#fff;
+  border:1px solid #666;border-radius:7px;
 }
-textarea{min-height:75px;resize:vertical}
 .agree{grid-column:1/-1;color:#ccc}
 .agree input{width:auto}
 .form-actions{grid-column:1/-1}
-#shareArea{display:none;margin-top:15px;padding:15px;background:#222;border-radius:10px}
+#shareArea{
+  display:none;margin-top:15px;
+  padding:15px;background:#222;border-radius:10px;
+}
 #status{color:#ddd;margin-top:10px;line-height:1.5}
-footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
+footer{
+  text-align:center;padding:25px;
+  color:#aaa;border-top:1px solid #444;
+}
 @media(max-width:500px){
   .container{padding:10px}
   .panel{padding:14px}
+  .wolf{height:230px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- OPENING ANIMATION -->
+<!-- OPENING SCREEN -->
 <div id="intro">
   <div class="intro-content">
-    <div class="wolf">🐺</div>
+    <img class="wolf"
+         src="wolf-opening.jpg"
+         alt="Howling Wolf"
+         onerror="this.style.display='none'">
+
     <h1>BEST SQUAD OF<br>WOLF SQUAD</h1>
     <p>ONE TEAM • ONE FAMILY 👑</p>
+
     <div class="loading"><span></span></div>
     <p>ENTERING WEBSITE...</p>
   </div>
 </div>
 
+<!-- HEADER -->
 <header id="home">
   <h1>𓆩🐺𓆪 THE WOLF SQUAD 🐺❗</h1>
   <p>ONE TEAM • ONE FAMILY 👑</p>
@@ -176,17 +220,23 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
 
 <main class="container">
 
+<!-- OWNER -->
 <section class="panel owner" id="owner">
   <h2>♛ GANG OWNER ♛</h2>
-  <img src="owner-logo.jpg" alt="Owner Logo"
+
+  <img src="owner-logo.jpg"
+       alt="Owner Logo"
        onerror="this.style.display='none'">
+
   <h3>WOLFY 🐺</h3>
   <p class="muted">Owner Of The Wolf Squad</p>
+
   <p style="margin-top:10px">
     <a href="https://www.tiktok.com/@wolfy.lk" target="_blank">
       TikTok: @wolfy.lk
     </a>
   </p>
+
   <div class="stats">
     <span>🐺 Members: 18</span>
     <span>👑 Owner: 1</span>
@@ -194,13 +244,16 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
   </div>
 </section>
 
+<!-- MEMBERS -->
 <section class="panel" id="members">
   <h2>🐺 SQUAD MEMBERS (18)</h2>
   <div class="member-grid" id="memberGrid"></div>
 </section>
 
+<!-- RULES -->
 <section class="panel" id="rules">
   <h2>♛ SQUAD RULES ♛</h2>
+
   <div class="rule">01. Squad Logo එක TikTok Page එකේ Logo එක විදිහට භාවිතා කරන්න.</div>
   <div class="rule">02. TikTok Bio එකට Full Squad Name එක දාන්න.</div>
   <div class="rule">03. Group Discussions වෙනත් Squads හෝ යාළුවන් සමඟ Share කරන්න එපා.</div>
@@ -209,24 +262,32 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
   <div class="rule">06. ප්‍රශ්න ඇති කරගන්න එපා. Admin උපදෙස් අනුව කටයුතු කරන්න.</div>
   <div class="rule">07. Squad Group එකේ සාමාජිකයන්ගේ Status ගැන අනවශ්‍ය ලෙස සඳහන් කරන්න එපා.</div>
   <div class="rule">08. Squad Group එකට සම්බන්ධ WhatsApp Number එකෙන් WhatsApp Bot භාවිතා කරන්න එපා.</div>
-  <div class="warning">⚠️ නීති කඩ කිරීම Squad එකෙන් ඉවත් කිරීමට හේතුවක් විය හැක.</div>
+
+  <div class="warning">
+    ⚠️ නීති කඩ කිරීම Squad එකෙන් ඉවත් කිරීමට හේතුවක් විය හැක.
+  </div>
 </section>
 
+<!-- APPLICATION FORM -->
 <section class="panel" id="apply">
   <h2>📋 SQUAD APPLICATION FORM</h2>
+
   <p class="muted" style="margin-bottom:15px">
-    Application එක පුරවා WhatsApp හරහා Group එකට Share කරන්න.
+    Application එක පුරවා WhatsApp හරහා යවන්න.
   </p>
 
   <form id="applicationForm">
+
     <div class="field">
       <label for="fullName">Full Name *</label>
-      <input id="fullName" required maxlength="60" placeholder="Your name">
+      <input id="fullName" required maxlength="60"
+             placeholder="Your name">
     </div>
 
     <div class="field">
       <label for="tiktok">TikTok Username *</label>
-      <input id="tiktok" required maxlength="40" placeholder="@username">
+      <input id="tiktok" required maxlength="40"
+             placeholder="@username">
     </div>
 
     <div class="field">
@@ -249,19 +310,23 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
       <label for="pages">Number of TikTok Pages *</label>
       <select id="pages" required>
         <option value="">Select</option>
-        <option>1</option><option>2</option>
-        <option>3</option><option>4+</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
       </select>
     </div>
 
     <div class="field">
       <label for="pageNames">TikTok Page Names (Optional)</label>
-      <input id="pageNames" maxlength="150" placeholder="Page names">
+      <input id="pageNames" maxlength="150"
+             placeholder="Page names">
     </div>
 
     <div class="field">
       <label for="previous">Previous Squads (Optional)</label>
-      <input id="previous" maxlength="100" placeholder="Previous squads">
+      <input id="previous" maxlength="100"
+             placeholder="Previous squads">
     </div>
 
     <div class="agree">
@@ -272,26 +337,34 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
     </div>
 
     <div class="form-actions">
-      <button type="submit">PREPARE APPLICATION 🐺</button>
+      <button type="submit">SUBMIT APPLICATION 🐺</button>
     </div>
   </form>
 
   <div id="shareArea">
     <h3>APPLICATION READY 🐺</h3>
-    <p class="muted">පහළ බොත්තම ඔබා WhatsApp Group එක තෝරා Send කරන්න.</p>
-    <a class="btn" id="shareButton" href="#" target="_blank" rel="noopener">
-      SHARE APPLICATION TO WHATSAPP
+    <p class="muted">
+      WhatsApp Open කර Send බොත්තම ඔබන්න.
+    </p>
+
+    <a class="btn" id="shareButton"
+       href="#" target="_blank" rel="noopener">
+       SEND APPLICATION TO OWNER
     </a>
+
     <p id="status"></p>
   </div>
+
   <p class="muted" style="font-size:12px;margin-top:12px">
-    ආරක්ෂාව සඳහා නිවසේ ලිපිනය හෝ පුද්ගලික දුරකථන අංකය ඇතුළත් කරන්න එපා.
+    ආරක්ෂාව සඳහා නිවසේ ලිපිනය හෝ වෙනත් පුද්ගලික තොරතුරු ඇතුළත් කරන්න එපා.
   </p>
 </section>
 
+<!-- JOIN GROUP -->
 <section class="panel" id="join">
   <h2>🐺 JOIN THE WOLF SQUAD</h2>
   <p class="muted">ONE TEAM • ONE FAMILY</p>
+
   <a class="btn"
      href="https://chat.whatsapp.com/FjltP3JGFiRJyh4tCFqgbg?s=cl&p=a&iam=2"
      target="_blank" rel="noopener">
@@ -308,14 +381,14 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #444}
 </footer>
 
 <script>
-// OPENING SCREEN
+// OPENING ANIMATION
 window.addEventListener("load",function(){
   setTimeout(function(){
     document.getElementById("intro").classList.add("hide");
-  },3000);
+  },3500);
 });
 
-// MEMBERS
+// SQUAD MEMBERS
 const members = [
 {name:"WOLFY",username:"wolfy.lk",owner:true},
 {name:"GIVAZZ",username:"givazzqtz01"},
@@ -348,6 +421,7 @@ members.forEach(function(m,index){
 
   const link=document.createElement("a");
   const cleanUsername=m.username.replace(/^-/,"");
+
   link.href="https://www.tiktok.com/@"+cleanUsername;
   link.target="_blank";
   link.rel="noopener";
@@ -358,7 +432,7 @@ members.forEach(function(m,index){
   memberGrid.appendChild(card);
 });
 
-// APPLICATION
+// APPLICATION TO OWNER WHATSAPP
 document.getElementById("applicationForm")
 .addEventListener("submit",function(event){
   event.preventDefault();
@@ -383,15 +457,21 @@ TikTok Page Names: ${pageNames || "Not provided"}
 Previous Squads: ${previous || "Not provided"}
 
 I have read and agreed to the Squad Rules.
+
 ONE TEAM • ONE FAMILY 👑`;
 
-  const shareUrl="https://api.whatsapp.com/send?text="
-    +encodeURIComponent(message);
+  const phoneNumber="94713126310";
+
+  const shareUrl=
+    "https://wa.me/"+phoneNumber+
+    "?text="+encodeURIComponent(message);
 
   document.getElementById("shareButton").href=shareUrl;
+
   document.getElementById("shareArea").style.display="block";
+
   document.getElementById("status").textContent=
-    "WhatsApp විවෘත කර අපේ Group එක තෝරා Send කරන්න. Application එක තවම යවා නැත.";
+    "WhatsApp එකේ 0713126310 Chat එක Open කරලා Send ඔබන්න. Message එක ස්වයංක්‍රීයව යවන්නේ නැහැ.";
 
   document.getElementById("shareArea").scrollIntoView({
     behavior:"smooth",block:"center"
