@@ -1,638 +1,392 @@
 
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE WOLF SQUAD 🐺</title>
+<title>THE WOLF SQUAD 🐺❗</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{scroll-behavior:smooth}
+*{box-sizing:border-box;scroll-behavior:smooth}
 
 body{
-  background:
-    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.85)),
-    url("wolf-opening.jpg");
-
-  background-position:center center;
-  background-size:cover;
-  background-attachment:fixed;
-  background-repeat:no-repeat;
-
-  color:#fff;
-  font-family:Arial,sans-serif;
+ margin:0;
+ color:white;
+ font-family:Arial,sans-serif;
+ background:
+ linear-gradient(rgba(0,0,0,.83),rgba(0,0,0,.88)),
+ url("wolf-opening.jpg") center center/cover fixed no-repeat;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* OPENING SCREEN */
-#intro{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:#050505;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:15px;
-  transition:opacity 1s,visibility 1s;
-}
-
-#intro.hide{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-
-.intro-content{
-  width:100%;
-  max-width:700px;
-}
-
-.wolf{
-  width:100%;
-  max-width:650px;
-  height:300px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:15px;
-  margin-bottom:20px;
-  filter:grayscale(1);
-  animation:howl 2s infinite alternate;
-}
-
-@keyframes howl{
-  from{transform:scale(1)}
-  to{transform:scale(1.04)}
-}
-
-.intro-content h1{
-  font-size:clamp(23px,6vw,42px);
-  letter-spacing:3px;
-  text-shadow:0 0 18px white;
-}
-
-.intro-content p{
-  color:#ccc;
-  margin:12px;
-}
-
-.loading{
-  height:8px;
-  background:#444;
-  border-radius:20px;
-  margin:25px auto;
-  max-width:350px;
-  overflow:hidden;
-}
-
-.loading span{
-  display:block;
-  height:100%;
-  width:0;
-  background:white;
-  animation:load 3s forwards;
-}
-
-@keyframes load{
-  to{width:100%}
-}
-
-/* HEADER */
 header{
-  text-align:center;
-  padding:25px 12px;
-  background:rgba(0,0,0,.78);
-  border-bottom:1px solid #777;
+ text-align:center;
+ padding:40px 12px;
+ background:rgba(0,0,0,.78);
+ border-bottom:1px solid #555;
 }
 
-.squad-logo{
-  width:115px;
-  height:115px;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 12px;
-  filter:drop-shadow(0 0 12px #aaa);
+.logo{
+ width:175px;
+ height:175px;
+ object-fit:contain;
+ margin-bottom:20px;
 }
 
-header h1{
-  font-size:clamp(22px,5vw,35px);
-  letter-spacing:2px;
+h1{
+ font-size:clamp(25px,6vw,40px);
+ letter-spacing:2px;
+ margin:10px 0;
 }
 
-header p{
-  color:#ccc;
-  margin-top:8px;
+.tagline{
+ font-size:22px;
+ color:#ddd;
+ margin-top:18px;
 }
 
-/* NAVIGATION */
 nav{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  padding:14px;
-  background:rgba(15,15,15,.94);
-  border-bottom:1px solid #555;
+ text-align:center;
+ padding:25px 10px;
+ background:rgba(15,15,15,.92);
+ border-bottom:1px solid #444;
 }
 
 nav a{
-  padding:9px 14px;
-  border:1px solid #777;
-  border-radius:20px;
-  font-size:13px;
+ display:inline-block;
+ color:white;
+ text-decoration:none;
+ border:1px solid #666;
+ border-radius:35px;
+ padding:15px 23px;
+ margin:5px;
+ font-weight:bold;
 }
 
 nav a:hover{
-  background:white;
-  color:black;
+ background:white;
+ color:black;
 }
 
-/* GENERAL */
 .container{
-  max-width:1150px;
-  margin:auto;
-  padding:18px;
+ max-width:850px;
+ margin:auto;
+ padding:18px;
 }
 
-.panel{
-  background:rgba(15,15,15,.88);
-  backdrop-filter:blur(7px);
-  border:1px solid #666;
-  border-radius:13px;
-  padding:18px;
-  margin-bottom:18px;
-  box-shadow:0 0 18px rgba(0,0,0,.65);
+.card{
+ background:rgba(15,15,15,.91);
+ border:1px solid #555;
+ border-radius:22px;
+ padding:25px;
+ margin:15px 0 30px;
+ text-align:center;
+ box-shadow:0 0 15px rgba(255,255,255,.08);
 }
 
-h2{
-  font-size:21px;
-  margin-bottom:15px;
+.card h2{
+ font-size:27px;
+ margin-top:5px;
 }
 
-.muted{color:#bbb}
-
-button,.btn{
-  display:inline-block;
-  background:#eee;
-  color:#000;
-  border:0;
-  border-radius:25px;
-  padding:12px 20px;
-  font-weight:bold;
-  margin-top:12px;
-  cursor:pointer;
+.owner-logo{
+ width:225px;
+ height:225px;
+ object-fit:cover;
+ border-radius:50%;
+ border:4px double white;
+ margin:20px auto;
 }
 
-button:hover,.btn:hover{
-  background:#aaa;
+.owner-name{
+ font-size:30px;
+ font-weight:bold;
 }
 
-/* OWNER */
-.owner{text-align:center}
-
-.owner img{
-  width:125px;
-  height:125px;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid #ddd;
-  margin:12px auto;
+.owner-info{
+ color:#ccc;
+ font-size:20px;
+ margin:10px;
 }
 
-.owner h3{font-size:24px}
+.tiktok{
+ color:white;
+ font-size:22px;
+ text-decoration:none;
+}
 
 .stats{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
-  margin-top:15px;
-  color:#ccc;
+ display:flex;
+ justify-content:space-around;
+ flex-wrap:wrap;
+ gap:15px;
+ margin-top:35px;
+ font-size:19px;
 }
 
-/* MEMBERS */
-.member-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-  gap:10px;
+.members{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
 }
 
 .member{
-  background:rgba(45,45,45,.9);
-  border:1px solid #666;
-  padding:13px;
-  border-radius:10px;
-  text-align:center;
-}
-
-.member strong{
-  display:block;
-  margin-bottom:6px;
+ background:#222;
+ border:1px solid #555;
+ border-radius:14px;
+ padding:15px 8px;
 }
 
 .member a{
-  color:#ccc;
-  font-size:13px;
+ color:#ddd;
+ text-decoration:none;
 }
 
-.member a:hover{
-  color:white;
-  text-decoration:underline;
+.member strong{
+ display:block;
+ font-size:18px;
+ margin-bottom:7px;
 }
 
-/* RULES */
+.member span{
+ font-size:13px;
+ color:#aaa;
+ overflow-wrap:anywhere;
+}
+
+.rules{
+ text-align:left;
+ line-height:1.8;
+}
+
 .rule{
-  padding:12px;
-  border-bottom:1px solid #555;
-  line-height:1.6;
-  color:#eee;
+ background:#222;
+ border:1px solid #444;
+ padding:13px;
+ border-radius:12px;
+ margin:10px 0;
 }
 
 .warning{
-  margin-top:15px;
-  padding:13px;
-  border:1px solid #aaa;
-  text-align:center;
-  color:white;
-  border-radius:8px;
+ color:#ff5555;
+ font-weight:bold;
+ text-align:center;
+ margin-top:20px;
 }
 
-/* APPLICATION */
 form{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:13px;
+ text-align:left;
 }
 
-.field label{
-  display:block;
-  margin-bottom:7px;
-  font-size:14px;
+label{
+ display:block;
+ margin:15px 0 7px;
+ font-weight:bold;
 }
 
-input,select{
-  width:100%;
-  padding:12px;
-  background:#090909;
-  color:white;
-  border:1px solid #777;
-  border-radius:7px;
+input,select,textarea{
+ width:100%;
+ padding:14px;
+ background:#222;
+ color:white;
+ border:1px solid #666;
+ border-radius:10px;
+ font-size:15px;
 }
 
-input:focus,select:focus{
-  outline:1px solid white;
+textarea{
+ min-height:90px;
+ resize:vertical;
 }
 
-.agree{
-  grid-column:1/-1;
-  color:#ddd;
+button{
+ width:100%;
+ padding:15px;
+ margin-top:20px;
+ border:1px solid white;
+ border-radius:12px;
+ background:white;
+ color:black;
+ font-size:17px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
-.agree input{
-  width:auto;
+button:hover{
+ background:#ccc;
 }
 
-.form-actions{
-  grid-column:1/-1;
+.join-btn{
+ display:inline-block;
+ padding:15px 25px;
+ margin:10px;
+ color:black;
+ background:white;
+ border-radius:30px;
+ text-decoration:none;
+ font-weight:bold;
 }
 
-#shareArea{
-  display:none;
-  margin-top:15px;
-  padding:15px;
-  background:rgba(45,45,45,.95);
-  border-radius:10px;
-}
-
-#status{
-  color:#ddd;
-  margin-top:10px;
-  line-height:1.5;
-}
-
-/* FOOTER */
 footer{
-  text-align:center;
-  padding:25px;
-  color:#ccc;
-  background:rgba(0,0,0,.9);
-  border-top:1px solid #666;
+ text-align:center;
+ padding:30px 10px;
+ background:rgba(0,0,0,.9);
+ border-top:1px solid #555;
 }
 
 footer img{
-  width:65px;
-  height:65px;
-  object-fit:contain;
-  margin-bottom:10px;
+ width:85px;
+ height:85px;
+ object-fit:contain;
 }
 
 @media(max-width:500px){
-  .container{padding:10px}
-  .panel{padding:14px}
-  .wolf{height:230px}
-  .squad-logo{
-    width:95px;
-    height:95px;
-  }
-}
-
-/* MOBILE BACKGROUND */
-@media(max-width:700px){
-  body{background-attachment:scroll}
+ .members{grid-template-columns:1fr 1fr}
+ .card{padding:18px}
+ nav a{padding:12px 17px}
+ .stats{font-size:16px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- OPENING SCREEN -->
-<div id="intro">
-  <div class="intro-content">
-
-    <img class="wolf"
-         src="wolf-opening.jpg"
-         alt="Howling Wolf">
-
-    <h1>BEST SQUAD OF<br>WOLF SQUAD</h1>
-
-    <p>ONE TEAM • ONE FAMILY 👑</p>
-
-    <div class="loading">
-      <span></span>
-    </div>
-
-    <p>ENTERING WEBSITE...</p>
-  </div>
-</div>
-
-<!-- HEADER -->
 <header id="home">
+ <img class="logo" src="squad-logo.jpg" alt="Wolf Squad Logo">
 
-  <img src="squad-logo.jpg"
-       class="squad-logo"
-       alt="THE WOLF SQUAD LOGO">
+ <h1>THE WOLF SQUAD 🐺❗</h1>
 
-  <h1>𓆩🐺𓆪 THE WOLF SQUAD 🐺❗</h1>
-
-  <p>ONE TEAM • ONE FAMILY 👑</p>
-
+ <div class="tagline">ONE TEAM • ONE FAMILY 👑</div>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="#home">HOME</a>
-  <a href="#owner">OWNER</a>
-  <a href="#members">MEMBERS</a>
-  <a href="#rules">RULES</a>
-  <a href="#apply">APPLY</a>
-  <a href="#join">JOIN GROUP</a>
+ <a href="#home">HOME</a>
+ <a href="#owner">OWNER</a>
+ <a href="#members">MEMBERS</a>
+ <a href="#rules">RULES</a>
+ <a href="#apply">APPLY</a>
+ <a href="#join">JOIN GROUP</a>
 </nav>
 
-<main class="container">
+<div class="container">
 
-<!-- OWNER -->
-<section class="panel owner" id="owner">
+<section class="card" id="owner">
+ <h2>♛ GANG OWNER ♛</h2>
 
-  <h2>♛ GANG OWNER ♛</h2>
+ <img class="owner-logo" src="owner-logo.jpg" alt="Owner Logo">
 
-  <img src="owner-logo.jpg" alt="Owner Logo">
+ <div class="owner-name">WOLFY 🐺</div>
 
-  <h3>WOLFY 🐺</h3>
+ <div class="owner-info">Owner Of The Wolf Squad</div>
 
-  <p class="muted">Owner Of The Wolf Squad</p>
+ <p>
+ <a class="tiktok" href="https://www.tiktok.com/@wolfy.lk" target="_blank">
+ TikTok: @wolfy.lk
+ </a>
+ </p>
 
-  <p style="margin-top:10px">
-    <a href="https://www.tiktok.com/@wolfy.lk"
-       target="_blank" rel="noopener">
-       TikTok: @wolfy.lk
-    </a>
-  </p>
-
-  <div class="stats">
-    <span>🐺 Members: 18</span>
-    <span>👑 Owner: 1</span>
-    <span>⚡ ONE TEAM</span>
-  </div>
-
+ <div class="stats">
+  <span>🐺 Members: 18</span>
+  <span>👑 Owner: 1</span>
+  <span>⚡ ONE TEAM</span>
+ </div>
 </section>
 
-<!-- MEMBERS -->
-<section class="panel" id="members">
+<section class="card" id="members">
+ <h2>🐺 SQUAD MEMBERS (18)</h2>
 
-  <h2>🐺 SQUAD MEMBERS (18)</h2>
-
-  <div class="member-grid" id="memberGrid"></div>
-
+ <div class="members" id="memberList"></div>
 </section>
 
-<!-- RULES -->
-<section class="panel" id="rules">
+<section class="card" id="rules">
+ <h2>⚠️ SQUAD RULES ⚠️</h2>
 
-  <h2>♛ SQUAD RULES ♛</h2>
+ <div class="rules">
+  <div class="rule">01. Squad Logo එක TikTok Page එකේ Logo එක විදිහට භාවිතා කරන්න.</div>
 
-  <div class="rule">
-    01. Squad Logo එක TikTok Page එකේ Logo එක විදිහට භාවිතා කරන්න.
-  </div>
+  <div class="rule">02. TikTok Bio එකට Full Squad Name එක දාන්න. (THE WOLF SQUAD 🐺❗)</div>
 
-  <div class="rule">
-    02. TikTok Bio එකට Full Squad Name එක දාන්න.
-  </div>
+  <div class="rule">03. Group Discussions වෙනත් Squads හෝ යාළුවන් සමඟ Share කරන්න එපා.</div>
 
-  <div class="rule">
-    03. Group Discussions වෙනත් Squads හෝ යාළුවන් සමඟ Share කරන්න එපා.
-  </div>
+  <div class="rule">04. මේ Squad එකේ සිටියදී වෙනත් Squad එකකට Join වෙන්න එපා.</div>
 
-  <div class="rule">
-    04. මේ Squad එකේ සිටියදී වෙනත් Squad එකකට Join වෙන්න එපා.
-  </div>
+  <div class="rule">05. කවුරුහරි Squad එකට හෝ සාමාජිකයෙකුට අපහාස කළොත් Admin කෙනෙකුට දැනුම් දෙන්න.</div>
 
-  <div class="rule">
-    05. කවුරුහරි Squad එකට හෝ සාමාජිකයෙකුට අපහාස කළොත් Admin කෙනෙකුට දැනුම් දෙන්න.
-  </div>
+  <div class="rule">06. ප්‍රශ්න ඇති කරගන්න එපා. Admin උපදෙස් අනුව කටයුතු කරන්න.</div>
 
-  <div class="rule">
-    06. ප්‍රශ්න ඇති කරගන්න එපා. Admin උපදෙස් අනුව කටයුතු කරන්න.
-  </div>
+  <div class="rule">07. Squad Group එකේ සාමාජිකයන්ගේ Status ගැන අනවශ්‍ය ලෙස සඳහන් කරන්න එපා.</div>
 
-  <div class="rule">
-    07. Squad Group එකේ සාමාජිකයන්ගේ Status ගැන අනවශ්‍ය ලෙස සඳහන් කරන්න එපා.
-  </div>
+  <div class="rule">08. Squad Group එකට සම්බන්ධ WhatsApp Number එකෙන් WhatsApp Bot භාවිතා කරන්න එපා.</div>
+ </div>
 
-  <div class="rule">
-    08. Squad Group එකට සම්බන්ධ WhatsApp Number එකෙන් WhatsApp Bot භාවිතා කරන්න එපා.
-  </div>
-
-  <div class="warning">
-    ⚠️ නීති කඩ කිරීම Squad එකෙන් ඉවත් කිරීමට හේතුවක් විය හැක.
-  </div>
-
+ <p class="warning">⚠️ Rules කඩ කරන සාමාජිකයන් Squad එකෙන් ඉවත් කළ හැකියි!</p>
 </section>
 
-<!-- APPLICATION -->
-<section class="panel" id="apply">
+<section class="card" id="apply">
+ <h2>📝 JOIN THE WOLF SQUAD</h2>
 
-  <h2>📋 SQUAD APPLICATION FORM</h2>
+ <form id="applyForm">
 
-  <p class="muted" style="margin-bottom:15px">
-    Application එක පුරවා WhatsApp හරහා යවන්න.
-  </p>
+  <label>Full Name *</label>
+  <input id="fullName" type="text" required placeholder="Enter your name">
 
-  <form id="applicationForm">
+  <label>TikTok Username *</label>
+  <input id="username" type="text" required placeholder="@username">
 
-    <div class="field">
-      <label for="fullName">Full Name *</label>
-      <input id="fullName"
-             required
-             maxlength="60"
-             placeholder="Your name">
-    </div>
+  <label>Age Range</label>
+  <select id="age">
+   <option>Under 13</option>
+   <option>13–15</option>
+   <option>16–17</option>
+   <option>18+</option>
+  </select>
 
-    <div class="field">
-      <label for="tiktok">TikTok Username *</label>
-      <input id="tiktok"
-             required
-             maxlength="40"
-             placeholder="@username">
-    </div>
+  <label>Number Of TikTok Pages</label>
+  <select id="pageCount">
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+   <option>4+</option>
+  </select>
 
-    <div class="field">
-      <label for="age">Age Range *</label>
-      <select id="age" required>
-        <option value="">Select Age Range</option>
-        <option>Under 13</option>
-        <option>13–15</option>
-        <option>16–17</option>
-        <option>18+</option>
-      </select>
-    </div>
+  <label>TikTok Page Names (Optional)</label>
+  <textarea id="pageNames" placeholder="Enter your page names"></textarea>
 
-    <div class="field">
-      <label for="pages">Number of TikTok Pages *</label>
-      <select id="pages" required>
-        <option value="">Select</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4+</option>
-      </select>
-    </div>
+  <label>Previous Squads (Optional)</label>
+  <input id="previous" type="text" placeholder="Previous squad names">
 
-    <div class="field">
-      <label for="pageNames">TikTok Page Names (Optional)</label>
-      <input id="pageNames"
-             maxlength="150"
-             placeholder="Page names">
-    </div>
+  <label>
+   <input id="agree" type="checkbox" style="width:auto" required>
+   I agree to follow THE WOLF SQUAD rules.
+  </label>
 
-    <div class="field">
-      <label for="previous">Previous Squads (Optional)</label>
-      <input id="previous"
-             maxlength="100"
-             placeholder="Previous squads">
-    </div>
+  <button type="submit">SUBMIT APPLICATION 🐺</button>
 
-    <div class="agree">
-      <label>
-        <input type="checkbox" id="agree" required>
-        I have read and agree to all Squad Rules.
-      </label>
-    </div>
-
-    <div class="form-actions">
-      <button type="submit">
-        SUBMIT APPLICATION 🐺
-      </button>
-    </div>
-
-  </form>
-
-  <div id="shareArea">
-
-    <h3>APPLICATION READY 🐺</h3>
-
-    <p class="muted">
-      WhatsApp Open කර Send බොත්තම ඔබන්න.
-    </p>
-
-    <a class="btn"
-       id="shareButton"
-       href="#"
-       target="_blank"
-       rel="noopener">
-       SEND APPLICATION TO OWNER
-    </a>
-
-    <p id="status"></p>
-
-  </div>
-
-  <p class="muted" style="font-size:12px;margin-top:12px">
-    ආරක්ෂාව සඳහා නිවසේ ලිපිනය හෝ වෙනත් පුද්ගලික තොරතුරු ඇතුළත් කරන්න එපා.
-  </p>
-
+ </form>
 </section>
 
-<!-- JOIN GROUP -->
-<section class="panel" id="join">
+<section class="card" id="join">
+ <h2>🐺 JOIN OUR GROUP</h2>
 
-  <h2>🐺 JOIN THE WOLF SQUAD</h2>
+ <p>Become a part of THE WOLF SQUAD!</p>
 
-  <p class="muted">ONE TEAM • ONE FAMILY</p>
-
-  <a class="btn"
-     href="https://chat.whatsapp.com/FjltP3JGFiRJyh4tCFqgbg?s=cl&p=a&iam=2"
-     target="_blank"
-     rel="noopener">
-     JOIN WOLF SQUAD GROUP
-  </a>
-
+ <a class="join-btn"
+ href="https://chat.whatsapp.com/FjltP3JGFiRJyh4tCFqgbg?s=cl&p=a&iam=2"
+ target="_blank">
+ JOIN WHATSAPP GROUP
+ </a>
 </section>
 
-</main>
+</div>
 
-<!-- FOOTER -->
 <footer>
-
-  <img src="squad-logo.jpg" alt="Squad Logo">
-
-  <h2>𓆩🐺𓆪 THE WOLF SQUAD</h2>
-
-  <p>ONE TEAM • ONE FAMILY 👑</p>
-
-  <p style="margin-top:10px">
-    © THE WOLF SQUAD
-  </p>
-
+ <img src="squad-logo.jpg" alt="Squad Logo">
+ <h2>THE WOLF SQUAD 🐺❗</h2>
+ <p>ONE TEAM • ONE FAMILY 👑</p>
+ <p>© THE WOLF SQUAD</p>
 </footer>
 
 <script>
-
-/* OPENING ANIMATION */
-window.addEventListener("load",function(){
-
-  setTimeout(function(){
-
-    document.getElementById("intro").classList.add("hide");
-
-  },3500);
-
-});
-
-
-/* SQUAD MEMBERS */
 const members = [
-
 {name:"WOLFY",username:"wolfy.lk",owner:true},
 {name:"GIVAZZ",username:"givazzqtz01"},
 {name:"ORION",username:"akunu_orion2"},
@@ -651,100 +405,48 @@ const members = [
 {name:"RAID",username:"i943695"},
 {name:"RAKUZ",username:"rakuz.qutz.lk"},
 {name:"9999",username:"kalana1234"}
-
 ];
 
-const memberGrid=document.getElementById("memberGrid");
+const memberList = document.getElementById("memberList");
 
-members.forEach(function(m,index){
+members.forEach(member=>{
+ const item = document.createElement("div");
+ item.className="member";
 
-  const card=document.createElement("div");
-  card.className="member";
+ const name = document.createElement("strong");
+ name.textContent = (member.owner ? "👑 " : "🐺 ") + member.name;
 
-  const name=document.createElement("strong");
+ const link = document.createElement("a");
+ link.href="https://www.tiktok.com/@" + member.username.replace(/^-/,"");
+ link.target="_blank";
+ link.rel="noopener";
+ link.textContent="@" + member.username;
 
-  name.textContent=
-    (index+1)+". "+m.name+(m.owner?" 👑":"");
-
-  const link=document.createElement("a");
-
-  const cleanUsername=m.username.replace(/^-/,"");
-
-  link.href="https://www.tiktok.com/@"+cleanUsername;
-  link.target="_blank";
-  link.rel="noopener";
-  link.textContent="@"+cleanUsername;
-
-  card.appendChild(name);
-  card.appendChild(link);
-
-  memberGrid.appendChild(card);
-
+ item.appendChild(name);
+ item.appendChild(link);
+ memberList.appendChild(item);
 });
 
+document.getElementById("applyForm").addEventListener("submit",function(e){
+ e.preventDefault();
 
-/* APPLICATION TO OWNER WHATSAPP */
-document.getElementById("applicationForm")
-.addEventListener("submit",function(event){
+ const message =
+ "🐺 THE WOLF SQUAD APPLICATION\n\n" +
+ "Name: " + document.getElementById("fullName").value + "\n" +
+ "TikTok: " + document.getElementById("username").value + "\n" +
+ "Age Range: " + document.getElementById("age").value + "\n" +
+ "TikTok Pages: " + document.getElementById("pageCount").value + "\n" +
+ "Page Names: " + document.getElementById("pageNames").value + "\n" +
+ "Previous Squads: " + document.getElementById("previous").value + "\n\n" +
+ "I agree to follow the squad rules.";
 
-  event.preventDefault();
+ const phoneNumber="94713126310";
 
-  const name=
-    document.getElementById("fullName").value.trim();
+ const shareUrl="https://wa.me/"+phoneNumber+
+ "?text="+encodeURIComponent(message);
 
-  const tiktok=
-    document.getElementById("tiktok").value.trim();
-
-  const age=
-    document.getElementById("age").value;
-
-  const pages=
-    document.getElementById("pages").value;
-
-  const pageNames=
-    document.getElementById("pageNames").value.trim();
-
-  const previous=
-    document.getElementById("previous").value.trim();
-
-
-  const message =
-`🐺 THE WOLF SQUAD - APPLICATION
-
-Full Name: ${name}
-TikTok Username: ${tiktok}
-Age Range: ${age}
-Number of TikTok Pages: ${pages}
-TikTok Page Names: ${pageNames || "Not provided"}
-Previous Squads: ${previous || "Not provided"}
-
-I have read and agreed to the Squad Rules.
-
-ONE TEAM • ONE FAMILY 👑`;
-
-
-  const phoneNumber="94713126310";
-
-  const shareUrl=
-    "https://wa.me/"+phoneNumber+
-    "?text="+encodeURIComponent(message);
-
-
-  document.getElementById("shareButton").href=shareUrl;
-
-  document.getElementById("shareArea").style.display="block";
-
-  document.getElementById("status").textContent=
-    "WhatsApp එකේ 0713126310 Chat එක Open කරලා Send ඔබන්න. Message එක ස්වයංක්‍රීයව යවන්නේ නැහැ.";
-
-
-  document.getElementById("shareArea").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
-
+ window.open(shareUrl,"_blank");
 });
-
 </script>
 
 </body>
